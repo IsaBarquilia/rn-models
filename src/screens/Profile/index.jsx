@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import styles from "./styles";
@@ -21,10 +21,15 @@ export default function Profile({ route }) {
 
   return (
     <View style={styles.container}>
-      <Title title="Profile" />
+     <Image source={require('../../../assets/images/titulo.png')} 
+        style={{ 
+          marginTop: 30,
+           width: 400, 
+           height: 55,
+           }} />
 
       {data ? (
-        <Text>Detalhes do usuário</Text>
+        <Text></Text>
       ) : (
         <Text>Selecione um usuário para exibir seus detalhes</Text>
       )}
@@ -33,7 +38,8 @@ export default function Profile({ route }) {
         <View style={styles.userDetail}>
           <Text style={styles.text}>{data.name}</Text>
           <Text style={styles.text}>{data.email}</Text>
-          <Text style={styles.text}>{data.age}</Text>
+          {/* <Text style={styles.text}>{data.descricao}</Text> */}
+          <Text style={styles.text}>{data.fundacao}</Text>
         </View>
 
         <View style={styles.userActions}>

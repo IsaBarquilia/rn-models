@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
+    backgroundColor: "#00033D",
     marginTop: 50,
   },
   button: {
@@ -12,10 +13,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#C9D4FF",
     borderRadius: 5,
   },
+  titulo: {
+    color: "white",
+    fontSize: 24,
+    color: "black",
+    marginBottom: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
   user: {
     marginTop: 20,
     padding: 10,
-    backgroundColor: "#C9D4FF",
+    backgroundColor: "#6f82bd",
     borderRadius: 5,
   },
   userDetail: {

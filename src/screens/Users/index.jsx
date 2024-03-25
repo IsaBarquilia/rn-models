@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, Image } from "react-native";
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 
 import styles from "./styles";
@@ -20,15 +20,21 @@ export default function Users() {
 
   return (
     <View style={styles.container}>
-      <Title title="Users" />
-      <Text>Tela de listagem de todos os usuários</Text>
-
+        <Image source={require('../../../assets/images/afilacao.png')} 
+        style={{ 
+          marginTop: 30,
+           width: 400, 
+           height: 85,
+           }} />
+     
+      <View style= {styles.inputContainer} >
       {allUsers.length > 0 ? (
         <View style={styles.userList}>
           {allUsers.map((user) => (
             <View key={user.id} style={styles.userItem}>
               <View>
                 <Text style={styles.userName}>{user.name}</Text>
+                
               </View>
 
               <View style={styles.userActions}>
@@ -43,8 +49,10 @@ export default function Users() {
           ))}
         </View>
       ) : (
-        <Text>Não há usuários cadastrados</Text>
+        <Text>Não há afiliações cadastrados</Text>
+        
       )}
+      </View>
     </View>
   );
 }

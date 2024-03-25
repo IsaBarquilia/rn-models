@@ -22,20 +22,20 @@ class UsersRepository {
     this.users = this.users.filter((user) => user.id !== id);
   }
 
-  update(id, name, email, age) {
+  update(id, name, email, fundacao) {
     const user = this.get(id);
 
     if (user) {
       user.name = name;
       user.email = email;
-      user.age = age;
+      user.fundacao = fundacao;
     }
     return user;
   }
 }
 
 const usersRepository = new UsersRepository();
-const newUser = new User(user.name, user.email, parseInt(user.age) || 0);
+const newUser = new User(user.name, user.email, parseInt(user.fundacao) || 0);
 
 usersRepository.add(newUser);
 

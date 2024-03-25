@@ -1,4 +1,4 @@
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Text, TextInput, TouchableOpacity, View, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect } from "react";
 
@@ -13,7 +13,8 @@ export default function Form({ route }) {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [age, setAge] = useState("");
+  const [fundacao, setfundacao] = useState("");
+  const [descricao, setdescricao] = useState("");
   const [isUpdate, setIsUpdate] = useState(edit);
 
   const navigation = useNavigation();
@@ -22,7 +23,8 @@ export default function Form({ route }) {
     if (edit) {
       setName(user.name);
       setEmail(user.email);
-      setAge(String(user.age));
+      setfundacao(String(user.fundacao));
+      setdescricao(user.descricao)
       setIsUpdate(true);
     } else {
       clearInputs();
@@ -31,10 +33,10 @@ export default function Form({ route }) {
 
   const handleUserAction = () => {
     if (isUpdate) {
-      usersRepository.update(user.id, name, email, parseInt(age) || 0);
+      usersRepository.update(user.id, name, email, descricao, parseInt(fundacao) || 0);
       clearInputs();
     } else {
-      const newUser = new User(name, email, parseInt(age) || 0);
+      const newUser = new User(name, email, descricao, parseInt(fundacao) || 0);
       usersRepository.add(newUser);
       clearInputs();
     }
@@ -46,31 +48,45 @@ export default function Form({ route }) {
     edit = false;
     setName("");
     setEmail("");
-    setAge("");
+    setfundacao("");
+    setdescricao("");
   };
 
   return (
     <View style={styles.container}>
-      <Title title={isUpdate ? "Editar Usuário" : "Novo Usuário"} />
+       <Image source={require('../../../assets/images/afilacao.png')} 
+        style={{ 
+          marginTop: 30,
+           width: 400, 
+           height: 85,
+           }} />
+      <Title title={isUpdate ? "Editar Usuário" : ""}/>
+      <View style= {styles.inputContainer} >
       <TextInput
-        placeholder="Digite o nome do usuário"
+        placeholder="Digite o nome da afiliação"
         style={styles.userInput}
         onChangeText={setName}
         value={name}
       />
       <TextInput
-        placeholder="Digite o email do usuário"
+        placeholder="Digite o email da afiliação"
         style={styles.userInput}
         onChangeText={setEmail}
         value={email}
       />
       <TextInput
-        placeholder="Digite a idade do usuário"
+        placeholder="Digite a data de fundação da afiliação"
         style={styles.userInput}
-        onChangeText={setAge}
-        value={age}
+        onChangeText={setfundacao}
+        value={fundacao}
         keyboardType="numeric"
       />
+        {/* <TextInput
+        placeholder="Digite a descrição da afiliação"
+        style={styles.userInput}
+        onChangeText={setdescricao}
+        value={descricao}
+      /> */}
 
       <TouchableOpacity style={styles.button} onPress={handleUserAction}>
         <Text>{isUpdate ? "Salvar Alterações" : "Criar Usuário"}</Text>
@@ -81,6 +97,8 @@ export default function Form({ route }) {
           <Text>Cancelar Edição</Text>
         </TouchableOpacity>
       )}
+      </View>
     </View>
+
   );
 }

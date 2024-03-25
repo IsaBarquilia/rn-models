@@ -1,9 +1,10 @@
 export default class User {
-  constructor(name, email, age) {
+  constructor(name, email, fundacao, descricao) {
     this.id = this.generateId();
     this.name = name;
     this.email = email;
-    this.age = age;
+    this.fundacao = fundacao;
+    this.descricao = descricao;
   }
 
   generateId() {

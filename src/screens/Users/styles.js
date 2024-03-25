@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 50,
     alignItems: "center",
+    backgroundColor: "#00033D",
   },
   userItem: {
     flexDirection: "row",
@@ -45,6 +46,15 @@ const styles = StyleSheet.create({
     minWidth: 70,
     alignItems: "center",
   },
+  inputContainer: {
+    backgroundColor: "#6f82bd",
+     padding: 10,
+     alignItems: "center",
+      marginTop: 50,
+      justifyContent: 'flex-end',
+     color: "white",
+     borderRadius: 5,
+   },
 });
 
 export default styles;
