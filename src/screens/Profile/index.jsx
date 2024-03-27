@@ -29,7 +29,7 @@ export default function Profile({ route }) {
            }} />
 
       {data ? (
-        <Text></Text>
+        <Text style={styles.info}>Edite as Filiais Cadastradas</Text>
       ) : (
         <Text>Selecione um usuário para exibir seus detalhes</Text>
       )}
