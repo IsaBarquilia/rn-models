@@ -26,7 +26,7 @@ export default function Users() {
            width: 400, 
            height: 85,
            }} />
-     
+
       <View style= {styles.inputContainer} >
       {allUsers.length > 0 ? (
         <View style={styles.userList}>
@@ -44,14 +44,20 @@ export default function Users() {
                 >
                   <Text>Detalhes</Text>
                 </TouchableOpacity>
+                
               </View>
             </View>
+            
           ))}
+          
         </View>
+        
       ) : (
         <Text>Não há afiliações cadastrados</Text>
-        
       )}
+       
+                  
+
       </View>
     </View>
   );

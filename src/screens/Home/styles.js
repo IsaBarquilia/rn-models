@@ -4,7 +4,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#00033D"
+    backgroundColor: "#fff"
+  },
+  containerzinho: {
+    backgroundColor: "#00033D",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
+    borderRadius: 10,
+    margin: 10,
   },
   descricao: {
     color: "#fff",

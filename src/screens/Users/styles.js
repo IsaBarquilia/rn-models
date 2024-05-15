@@ -5,8 +5,9 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 50,
     alignItems: "center",
-    backgroundColor: "#00033D",
+    backgroundColor: "#fff",
   },
+
   userItem: {
     flexDirection: "row",
     justifyContent: "space-between",

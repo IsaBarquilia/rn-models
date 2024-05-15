@@ -31,17 +31,23 @@ export default function Profile({ route }) {
       {data ? (
         <Text style={styles.info}>Edite as Filiais Cadastradas</Text>
       ) : (
-        <Text>Selecione um usuário para exibir seus detalhes</Text>
+        <Text>Não há filiais cadastradas</Text>
       )}
-
+   <View style={styles.containerzinho}>
+   <Image source={require('../../../assets/images/magia.png')} 
+        style={{ 
+          marginTop: 10,
+           width: 350, 
+           height: 105,
+           }} />
       <View style={styles.user}>
         <View style={styles.userDetail}>
           <Text style={styles.text}>{data.name}</Text>
           <Text style={styles.text}>{data.email}</Text>
           {/* <Text style={styles.text}>{data.descricao}</Text> */}
           <Text style={styles.text}>{data.fundacao}</Text>
-        </View>
-
+        
+</View>
         <View style={styles.userActions}>
           <TouchableOpacity style={styles.editButton} onPress={editUser}>
             <Text>Editar</Text>
@@ -49,6 +55,7 @@ export default function Profile({ route }) {
           <TouchableOpacity style={styles.deleteButton} onPress={deleteUser}>
             <Text>Excluir</Text>
           </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>

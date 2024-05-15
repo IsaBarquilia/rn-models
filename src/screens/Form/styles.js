@@ -8,7 +8,15 @@ const styles = StyleSheet.create({
     marginTop: 50,
     color: "white",
     alignItems: "center",
-    backgroundColor:'#00033D',
+    backgroundColor:'#fff',
+  },
+  containerzinho: {
+    backgroundColor: "#00033D",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
+    borderRadius: 10,
+    margin: 10,
   },
   button: {
     marginTop: 20,
@@ -27,6 +35,14 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: "white",
     marginBottom: 20,
+  },
+  text:{
+    color: "white",
+    fontSize: 24,
+    color: "white",
+    marginBottom: 20,
+  
+
   },
   inputContainer: {
    backgroundColor: "#6f82bd",
